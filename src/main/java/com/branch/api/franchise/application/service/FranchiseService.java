@@ -12,4 +12,5 @@ public interface FranchiseService {
     List<Franchise> getFranchises();
     Franchise getFranchise(int id);
     Franchise createFranchise(FranchiseDto franchise);
+    void deleteFranchise(int id);
 }

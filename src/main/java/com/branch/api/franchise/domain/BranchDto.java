@@ -10,5 +10,4 @@ import java.util.List;
 public class BranchDto {
     private String name;
     private Franchise franchise;
-    private List<Product> products;
 }

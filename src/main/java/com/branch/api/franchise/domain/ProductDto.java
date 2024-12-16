@@ -1,6 +1,7 @@
 package com.branch.api.franchise.domain;
 
 import com.branch.api.franchise.infrastructure.repository.entity.Branch;
+import com.branch.api.franchise.infrastructure.repository.entity.Product;
 import lombok.Data;
 
 @Data

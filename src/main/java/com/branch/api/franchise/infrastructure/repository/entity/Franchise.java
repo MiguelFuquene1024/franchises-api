@@ -15,11 +15,12 @@ import java.util.List;
 @Table(name = "franquicia")
 public class Franchise {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(name = "nombre",unique = true, nullable = false)
     private String name;
     @Column(name = "sucursales")
-    @OneToMany(mappedBy = "franquicia")
+    @OneToMany(mappedBy = "franchise")
     private List<Branch> branches;
 
 }
