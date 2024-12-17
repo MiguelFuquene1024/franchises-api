@@ -27,9 +27,17 @@ public class ProductController {
     public ResponseEntity<?> createProduct(@RequestBody ProductDto productDto) {
         return ResponseEntity.ok(productService.createProduct(productDto));
     }
+    @PutMapping("/{id}")
+    public ResponseEntity<?> updateProduct(@PathVariable int id ,@RequestBody ProductDto productDto) {
+        return ResponseEntity.ok(productService.updateProduct(id, productDto));
+    }
     @DeleteMapping("/{id}")
     public ResponseEntity deleteProduct(@PathVariable int id) {
         productService.deleteProduct(id);
         return ResponseEntity.ok().body(HttpStatus.OK);
+    }
+    @GetMapping("/getQuery/{id}")
+    public ResponseEntity<?> getProductQuery(@PathVariable int id) {
+        return ResponseEntity.ok(productService.getQueryMaxProductAmount(id));
     }
 }

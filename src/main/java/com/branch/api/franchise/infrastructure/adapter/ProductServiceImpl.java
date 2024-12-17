@@ -2,9 +2,8 @@ package com.branch.api.franchise.infrastructure.adapter;
 
 import com.branch.api.franchise.application.service.ProductService;
 import com.branch.api.franchise.domain.ProductDto;
-import com.branch.api.franchise.infrastructure.repository.FranchiseRepository;
+import com.branch.api.franchise.infrastructure.repository.entity.Query;
 import com.branch.api.franchise.infrastructure.repository.ProductRepository;
-import com.branch.api.franchise.infrastructure.repository.entity.Franchise;
 import com.branch.api.franchise.infrastructure.repository.entity.Product;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -40,9 +39,22 @@ public class ProductServiceImpl implements ProductService {
                 .name(productDto.getName())
                 .description(productDto.getDescription())
                 .price(productDto.getPrice())
-                .amount(productDto.getAmount()).build();
+                .amount(productDto.getAmount())
+                .branch(productDto.getBranch()).build();
         return productRepository.save(product);
     }
+
+    @Override
+    public Product updateProduct(int id,ProductDto productDto) {
+        Optional<Product> product = productRepository.findById(id);
+        if (product.isPresent()) {
+            product.get().setAmount(productDto.getAmount());
+            return productRepository.save(product.get());
+        }else {
+            throw new RuntimeException("Product not found");
+        }
+    }
+
 
     @Override
     public void deleteProduct(int id) {
@@ -52,5 +64,10 @@ public class ProductServiceImpl implements ProductService {
         }else {
             throw new RuntimeException("Product not found");
         }
+    }
+
+    @Override
+    public List<Query> getQueryMaxProductAmount(int id) {
+        return productRepository.getMaxProductAmountByBranchesForOneFranchise(id);
     }
 }
