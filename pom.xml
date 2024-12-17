@@ -89,6 +89,7 @@
 				</configuration>
 			</plugin>-->
 		</plugins>
+		<finalName>spring-api-docker-franchise</finalName>
 	</build>
 
 </project>
