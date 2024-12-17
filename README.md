@@ -32,9 +32,8 @@
   . mvn clean
   . mvn compile
 - Luego corra la aplicación,deberá verse como la imagen a continuación:
--
 
-![]()
+![](https://github.com/MiguelFuquene1024/franchises-api/blob/master/IMG/ApiRunning.png)
 
 
 -  En esta api podra crear franquicias,sucursales y productos sin embargo antes de continuar tenga en cuenta las siguientes reglas:
@@ -42,46 +41,52 @@
 - No podrá crear una sucursal si no ha creado una franquicia antes.
 
 
-![]()
-
-
-
-
-![]()
-
-
 - Para crear una nueva franquicia abra postman, cree una nueva petición de tipo POST, pegue la siguiente url (http://localhost:8080/franchise) y en el body haga un JSON con nombre.
 - Debe obtener una respuesta como la que se muestra en la siguiente imagen:
 
 
-![]()
+![](https://github.com/MiguelFuquene1024/franchises-api/blob/master/IMG/CreateFranchise.png)
 
 
 - Para crear una nueva sucursal abra postman, cree una nueva petición de tipo POST, pegue la siguiente url (http://localhost:8080/branch) y en el body haga un JSON con nombre y objeto en formato JSON llamado franchise con un id en su interior como lo meutra la siguiente imagen.
 - Debe obtener una respuesta como la que se muestra en la siguiente imagen:
 
-![]()
+![](https://github.com/MiguelFuquene1024/franchises-api/blob/master/IMG/CreateBranch.png)
 
 
 - Para crear una nuevo producto abra postman, cree una nueva petición de tipo POST, pegue la siguiente url (http://localhost:8080/producto) y en el body haga un JSON con nombre.
 - Debe obtener una respuesta como la que se muestra en la siguiente imagen:
 
-![]()
+![](https://github.com/MiguelFuquene1024/franchises-api/blob/master/IMG/CreateProduct.png)
 
 -   Para actualizar la cantidad de un producto en especifico, , cree una nueva petición de tipo PUT, pegue la siguiente url (http://localhost:8080/producto/) seguido del id del producto que desea actualizar y en el body haga un JSON con el atributo amount y el valor por el que desea actualizarlo.
+
+![](https://github.com/MiguelFuquene1024/franchises-api/blob/master/IMG/UpdateProduct.png)
+
+
 - Si no sabe el id del producto puede tambien consultar todos los productos existente con el siguiente endpoint en postman:
   - Peticion tipo GET http://localhost:8080/product
+
+ ![](https://github.com/MiguelFuquene1024/franchises-api/blob/master/IMG/GetProducts.png)
 - Asi mismo puede consultar tambien las sucursales y las franquicias con los siguientes:
   - Peticion Franquicias tipo GET http://localhost:8080/franchise
+  
+  ![](https://github.com/MiguelFuquene1024/franchises-api/blob/master/IMG/GetFranchises.png)
+  
   - Peticion Sucursales tipo GET http://localhost:8080/branch
+  
+  ![](https://github.com/MiguelFuquene1024/franchises-api/blob/master/IMG/GetBranches.png)
+  
 - Tambien puede consultar sobre una franquicia,sucursal o producto añadiendole un / seguido del id que quiera consultar.
 
 - Para eliminar el producto de una sucursal, cree una nueva petición de tipo DELETE, peque la siguiente url (http://localhost:8080/producto/) seguido del id del producto que desea borrar.
 
-![]()
+![](https://github.com/MiguelFuquene1024/franchises-api/blob/master/IMG/DeleteProduct.png)
 
 - Finalmente si quiere saber cual es el producto que mas stock tiene por sucursal para una francquicia puntual, cree una nueva petición de tipo GET, pegue la siguiente url (http://localhost:8080/product/getQuery/)seguido del id de la franquicia que desea consultar.
 - Debera tener algo como en la siguiente imagen.
+  
+![](https://github.com/MiguelFuquene1024/franchises-api/blob/master/IMG/GetQuery.png)
 
 #DockerFile
 - IMPORTANTE: Debe tener Docker instalado previamente.
