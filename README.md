@@ -88,7 +88,7 @@
   
 ![](https://github.com/MiguelFuquene1024/franchises-api/blob/master/IMG/GetQuery.png)
 
-#DockerFile
+# DockerFile
 - IMPORTANTE: Debe tener Docker instalado previamente.
 - Si se quiere correr el proyecto con docker debemos realizar los siguientes pasos:
   - Entramos al cmd y nos ubicamos en la raiz de proyecto, alli ejecutamos el comando "mvn package", este nos compilara el proyecto y creara el archivo .jar llamado spring-api-docker-franchise.jar
